@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="X4l-8b-N0c">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,467 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="calenrad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TTd-FI-iiu" customClass="GIDSignInButton">
+                                <rect key="frame" x="67" y="139" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="0hF-6X-bpi">
+                        <barButtonItem key="rightBarButtonItem" title="Sign out" id="e9u-P4-mFO"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="U59-Ie-7zD" kind="show" id="8a8-5u-kgp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1940" y="60.719640179910051"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="15v-jA-bff">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="U59-Ie-7zD" customClass="HomeViewController" customModule="calenrad" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ryj-ol-0GM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6PU-Si-21Y">
+                                <rect key="frame" x="188" y="562" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOut:" destination="U59-Ie-7zD" eventType="touchUpInside" id="gAx-r0-XfK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUw-wb-djN">
+                                <rect key="frame" x="90" y="351" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="OOE-NU-e5o" kind="show" id="BWj-S7-K0I"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ukG-AM-dU8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Phd-XH-Kty" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2671.1999999999998" y="60.719640179910051"/>
+        </scene>
+        <!--Form View Controller-->
+        <scene sceneID="ucC-AE-WMy">
+            <objects>
+                <viewController id="OOE-NU-e5o" customClass="FormViewController" customModule="calenrad" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KjV-xa-2fG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's going to happen?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAG-dd-CU3">
+                                <rect key="frame" x="44" y="129" width="191" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Who else should be there?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPy-pD-JHf">
+                                <rect key="frame" x="44" y="267" width="204" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ex: Happy Hour, Playdate" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SbF-Yh-0EE">
+                                <rect key="frame" x="44" y="165" width="191" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stw-hs-UDK">
+                                <rect key="frame" x="104" y="406" width="166" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.65490196079999996" green="0.70980392160000005" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Find Some Times">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueOn:" destination="OOE-NU-e5o" eventType="touchUpInside" id="uXI-Q1-G52"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9D-0Q-TLq">
+                                <rect key="frame" x="76" y="296" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="getContacts:" destination="OOE-NU-e5o" eventType="touchUpInside" id="5Yg-e2-3Xa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUT-yj-gq8">
+                                <rect key="frame" x="76" y="334" width="217" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="g2z-jD-MNv"/>
+                    </view>
+                    <connections>
+                        <outlet property="happening" destination="SbF-Yh-0EE" id="oHt-y1-kWt"/>
+                        <outlet property="invitees" destination="hUT-yj-gq8" id="bgL-gw-qXA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EbA-7o-wrs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3506.4000000000001" y="60.719640179910051"/>
+        </scene>
+        <!--Form Two View Controller-->
+        <scene sceneID="iui-DA-aQE">
+            <objects>
+                <viewController storyboardIdentifier="FormTwoViewController" id="0wo-7Y-vbr" customClass="FormTwoViewController" customModule="calenrad" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bj9-da-G1c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="2K8-hk-hkT">
+                                <rect key="frame" x="25" y="91" width="324" height="78.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generally, what days?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amf-66-roV">
+                                        <rect key="frame" x="0.0" y="0.0" width="324" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="Kdo-4a-J0c">
+                                        <rect key="frame" x="0.0" y="48.5" width="324" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kY0-kW-abx">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="M">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="checkMon:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="OYb-X6-XGb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yoE-Mt-wNE">
+                                                <rect key="frame" x="49" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="T">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tuesCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="Hgf-5h-FxK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcw-WG-5zs">
+                                                <rect key="frame" x="98" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="W">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="wedCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="wtV-Xi-phn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WZ-iV-dx3">
+                                                <rect key="frame" x="147" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="TH">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="thursCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="QWc-Qc-APj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBr-Jy-viL">
+                                                <rect key="frame" x="196" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="F">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="fridayCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="q3R-ox-Ztq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2E-Af-62E">
+                                                <rect key="frame" x="245" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="S">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="satCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="gVG-db-aKU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbu-mn-3Nl">
+                                                <rect key="frame" x="294" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Sn">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sunCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="Fsm-n8-FkC"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="voU-Y7-uQd">
+                                <rect key="frame" x="25" y="443" width="300" height="50.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Within the next..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzw-0c-oRh">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="xlX-Zv-SFk">
+                                        <rect key="frame" x="0.0" y="20.5" width="300" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n11-ZC-tgU">
+                                                <rect key="frame" x="0.0" y="0.0" width="39" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Week">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="weekCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="eiT-5d-ijw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkC-NX-5A1">
+                                                <rect key="frame" x="70" y="0.0" width="59" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="2 Weeks">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="twoWeekCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="6fc-vc-xaM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZV-jE-X0K">
+                                                <rect key="frame" x="160" y="0.0" width="44" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Month">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="monthCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="B0y-dU-icj"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtH-SA-7hr">
+                                                <rect key="frame" x="235" y="0.0" width="65" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="2 Months">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="twoMonthCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="5Cf-aY-6Q9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xg1-56-RKc">
+                                <rect key="frame" x="65" y="584" width="244" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.65490196079999996" green="0.70980392160000005" blue="0.80784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Find dates on your calendar!">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submit:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="xC4-Vk-lov"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="Pme-35-nji">
+                                <rect key="frame" x="23" y="206" width="323" height="83.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What time of day?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gox-Y8-VGJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="rWz-Yo-1iN">
+                                        <rect key="frame" x="0.0" y="53.5" width="323" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ess-bx-DlL">
+                                                <rect key="frame" x="0.0" y="0.0" width="57" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Morning">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="morningCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="MXI-J5-ZM4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toL-BO-Z01">
+                                                <rect key="frame" x="86" y="0.0" width="69" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Afternoon">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="afterCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="1ZQ-dM-6iC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PG9-xV-kr3">
+                                                <rect key="frame" x="184" y="0.0" width="55" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Evening">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="evenCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="NR2-a8-7VB"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFx-pc-juj">
+                                                <rect key="frame" x="268" y="0.0" width="55" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Full Day">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="fullCheck:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="YsW-Du-zte"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="RCI-9D-cwb">
+                                <rect key="frame" x="23" y="336" width="318" height="73.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many hours?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NP-Kf-Fcf">
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="29z-Xb-o6D">
+                                        <rect key="frame" x="0.0" y="43.5" width="318" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7x-yD-Zpi" userLabel="1">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="1">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="oneHour:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="zCe-dK-BwM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JO5-TE-Iue">
+                                                <rect key="frame" x="72" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="2">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="twoHours:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="mKE-QE-CSK"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kmt-tP-h8f">
+                                                <rect key="frame" x="144" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="3">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="threeHours:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="Tgs-wj-xyz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnY-ah-OhU">
+                                                <rect key="frame" x="216" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="4">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="fourHours:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="K4i-FW-IwN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2c0-hw-FFl">
+                                                <rect key="frame" x="288" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.76862745099999996" green="0.86666666670000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="5+">
+                                                    <color key="titleColor" red="0.96862745100000003" green="0.98431372549999996" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="fivePlus:" destination="0wo-7Y-vbr" eventType="touchUpInside" id="Nag-GE-p8X"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="p77-nq-dw7"/>
+                    </view>
+                    <connections>
+                        <outlet property="afternoon" destination="toL-BO-Z01" id="ah1-Bg-JFl"/>
+                        <outlet property="evening" destination="PG9-xV-kr3" id="dGb-yI-MXi"/>
+                        <outlet property="fivePlus" destination="2c0-hw-FFl" id="fVp-hM-JkI"/>
+                        <outlet property="fourHours" destination="xnY-ah-OhU" id="KX4-kP-oNm"/>
+                        <outlet property="friday" destination="oBr-Jy-viL" id="q7X-wM-Eb2"/>
+                        <outlet property="fullDay" destination="gFx-pc-juj" id="XEl-t9-R6m"/>
+                        <outlet property="monday" destination="kY0-kW-abx" id="KcK-pA-bhw"/>
+                        <outlet property="month" destination="qZV-jE-X0K" id="Dwy-5E-Jan"/>
+                        <outlet property="morning" destination="ess-bx-DlL" id="Y7a-gf-gb2"/>
+                        <outlet property="oneHour" destination="x7x-yD-Zpi" id="dC5-Ci-Bt4"/>
+                        <outlet property="saturday" destination="V2E-Af-62E" id="4mq-oc-hXm"/>
+                        <outlet property="sunday" destination="Kbu-mn-3Nl" id="us3-8j-HMP"/>
+                        <outlet property="threeHours" destination="Kmt-tP-h8f" id="jFw-qI-utk"/>
+                        <outlet property="thursday" destination="1WZ-iV-dx3" id="oa4-tV-wCb"/>
+                        <outlet property="tuesday" destination="yoE-Mt-wNE" id="mcy-bf-Myx"/>
+                        <outlet property="twoHours" destination="JO5-TE-Iue" id="o5s-jg-Ufa"/>
+                        <outlet property="twoMonth" destination="FtH-SA-7hr" id="QoW-af-5AM"/>
+                        <outlet property="twoWeek" destination="QkC-NX-5A1" id="X0C-Ma-Zj3"/>
+                        <outlet property="wednesday" destination="xcw-WG-5zs" id="ewP-5a-Lno"/>
+                        <outlet property="week" destination="n11-ZC-tgU" id="BuH-Iq-muK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RLp-iS-sSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4300" y="55.322338830584712"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dbN-Pk-aXF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X4l-8b-N0c" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T60-hK-HNX">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dfW-bS-Ctq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RKJ-cj-IdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1000.8" y="60.719640179910051"/>
         </scene>
     </scenes>
 </document>

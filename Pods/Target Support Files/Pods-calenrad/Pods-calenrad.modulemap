@@ -1,0 +1,6 @@
+framework module Pods_calenrad {
+  umbrella header "Pods-calenrad-umbrella.h"
+
+  export *
+  module * { export * }
+}
